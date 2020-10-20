@@ -1,0 +1,68 @@
+//1-2. feladat
+CREATE TABLE gyarto (
+	adoszam INT NOT NULL PRIMARY KEY,
+	nev VARCHAR(30),
+	telephely VARCHAR(100)
+);
+
+CREATE TABLE termek (
+	tkod INT NOT NULL PRIMARY KEY,
+	nev VARCHAR(50),
+	ear INT NOT NULL,
+	gyarto int,
+	FOREIGN KEY (gyarto) REFERENCES gyarto(adoszam)
+);
+CREATE TABLE Egysegek(
+	aru int,
+	FOREIGN KEY (aru) REFERENCES termek(tkod),
+	db int NOT NULL
+);
+CREATE TABLE Alkatresz(
+	akod INT NOT NULL PRIMARY KEY,
+	nev VARCHAR(50)
+);
+CREATE TABLE Komponens(
+	termek int,
+	FOREIGN KEY (termek) REFERENCES termek(nev),
+	alkatresz int,
+	FOREIGN KEY (alkatresz) REFERENCES Alkatresz(akod)
+);
+
+ //3. feladat
+
+CREATE TABLE Tanfolyam (
+	tkod INT NOT NULL PRIMARY KEY,
+	megnevezes VARCHAR(30),
+	tipus VARCHAR(30),
+	ar INT
+);
+
+CREATE TABLE Resztvevo (
+	tajszam INT NOT NULL PRIMARY KEY,
+	nev VARCHAR(30),
+	lakcim VARCHAR(100)
+);
+
+CREATE TABLE Kapcs (
+	befizetes INT,
+	tkod int,
+	FOREIGN KEY (tkod) REFERENCES Tanfolyam(tkod),
+	rkod int,
+	FOREIGN KEY (rkod) REFERENCES Resztvevo(tajszam)
+);
+
+//4. feladat
+
+CREATE TABLE termekek(
+	tkod INT PRIMARY KEY,
+	nev VARCHAR(50) NOT NULL,
+	ear INT CHECK (EAR>0),
+	kategoria CHAR(20)
+);
+
+INSERT INTO termekek VALUES(1,'lapat',2000,'K1');
+INSERT INTO termekek VALUES(2,'sepru',4000,'K1');
+INSERT INTO termekek VALUES(3,'mosogato gel',1500,'K2');
+INSERT INTO termekek VALUES(4,'szappan',1000,'K2');
+INSERT INTO termekek VALUES(5,'pohar',2400,'K3');
+);
