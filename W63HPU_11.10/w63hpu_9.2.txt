@@ -1,0 +1,15 @@
+2)
+SELECT termek.nev, gyarto.nev
+FROM termek
+INNER JOIN gyarto ON termek.gyarto = gyarto.adoszam;
+
+SELECT termek.nev, gyarto.nev, termek.ear
+FROM termek
+WHERE gyarto.nev = X
+INNER JOIN gyarto ON termek.gyarto = gyarto.adoszam;
+
+SELECT Alkatresz.nev
+FROM Alkatresz
+WHERE termek.nev = X
+INNER JOIN termek ON Alkatresz.akod = termek.tkod;
+
