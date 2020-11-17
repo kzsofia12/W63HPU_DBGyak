@@ -1,0 +1,10 @@
+
+
+SELECT megnevezes, ar, IF(ar>100000, "Drága", "Olcsó");
+
+
+
+SELECT Tanfolyam.megnevezes, IF(COUNT(Befizetes.diak)>10, "Sokan", "Kevesen")
+FROM Tanfolyam
+INNER JOIN Befizetes ON Tanfolyam.tkod=Befizetes.kurzus
+GROUP BY Tanfolyam.megnevezes;
