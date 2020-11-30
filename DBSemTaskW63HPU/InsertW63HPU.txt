@@ -1,0 +1,164 @@
+INSERT INTO Kategoria (nev) VALUES
+('Tejtermék'),
+('Olaj, zsír'),
+('Fagyasztott termékek'),
+('Fagyasztott desszert'),
+('Tészták'),
+('Sütési segédanyagok'),
+('Rizs, cukor, liszt'),
+('Gabonapehely,müzli'),
+('Édesség');
+
+INSERT INTO Raktar (nev, irsz, varos, utcaHsz) VALUES
+('GW-08', 3524, 'Miskolc', 'Szerend utca 20' ),
+('AS-75', 1102, 'Budapest', 'Zaránd út 16/B'),
+('BGD-20', 2475, 'Piliscsaba', 'Attila utca 1'),
+('DGM-1', 7825, 'Old', 'Fő út 152');
+
+INSERT INTO Elado (nev, email, telefonszam) VALUES
+('Mészáros Orsolya', 'morsi@bolt.com', '306038606'),
+('Bakos Mónika', 'monika@bolt.com', '701901643'),
+('Jakab Milán', 'jmilan@bolt.com', '308384814'),
+('Takács Péter', 'tpeter@bolt.com', '207672910');
+
+INSERT INTO Vevo (`nev`, `email`, `telefonszam`, `jelszo`, `irsz`, `varos`, `utcaHsz`) VALUES 
+('Fülöp Tibor', 'fultibor@abc.com', '305999086', 'QUnP6', '8223', 'Balatonalmádi', 'Rákóczi út 97.'),
+('Pintér Donát', 'donat@abc.com', '703017453', 'UgpQY2', '4224', 'Bodaszőlő', 'Tompa utca 49'),
+('Rácz Mónika', 'raczmonika@abc.com', '302472763', 'L2EDYX', '3603', 'Sajóvárkony', 'Gellért tér 62'),
+('Németh Zsófia', 'zsofianemeth@abc.com', '303017453', 'SKAWTKc', '8475', 'Zalagalsa', 'Kárpát utca 5'),
+('Váradi Szabina', 'varszabina@abc.com', '208340880', 'WDAx', '5309', 'Berekfürdőtelep', 'Apor Péter utca 73');
+
+INSERT INTO Futar (`nev`, `telefonszam`) VALUES 
+('Bakos Ármin', '708124038'),
+('Váradi Csaba', '309583685'),
+('Zobor Gyula', '208504231'),
+('Virág Kevin', '709851600');
+
+INSERT INTO `termek` ( `nev`, `kiszereles`, `lejaratiDatum`, `ar`, `rakID`, `KatID`) VALUES
+('Sweet Family Kristálycukor',1000, '2020-12-03', 279, 1 ,7),
+( 'Uncle Ben\'s hosszúsz. rizs', 250,'2021-05-30',399, 4 , 7),
+('Bio Bridge Rizsital natur',1000,'2021-03-07', 679, 2, 1),
+('Cerbona csokoládés müzlisz.',20,'2021-09-21', 82, 1, 8),
+('Kukta hasábburgonya',2500,'2021-08-12' ,1399, 3, 3),
+('Farmfrites hasábburgonya',1000,'2021-12-19', 479, 3, 3),
+('Gyermelyi kiskocka 4 tojásos', 500 , '2022-01-04',399, 1, 5),
+('Gyermelyi tarhonya 4 tojásos', 500, '2022-03-05',399, 1, 5),
+('Gyermelyi kiskagyló 4 tojásos',500, '2020-12-04',399, 1, 5),
+('Gyermelyi nagykocka 4 tojásos',500, '2021-01-05',399, 1, 5),
+('Gyermelyi rövidmetélt 4 tojásos',500, '2021-03-05',399,2, 5),
+('Kinder pingui',30, '2020-12-18', 124, 3, 1),
+('Cini Minis Gabonapehely szel.', 25, '2021-01-15', 95,4, 8),
+('Chocapic Gabonapehely szel.', 25, '2020-12-01',95, 3, 8),
+('Vénusz étolaj',2000,  '2022-01-14',1029, 2, 2),
+('Bourbon Vaníliás cukor',10, '2020-11-30',95, 2, 6),
+('Gyermelyi búzafinomliszt', 1000,  '2020-12-31',172, 3, 7),
+('Ristorante pizza prosciutto',320, '2021-06-10',709,  3, 3),
+('Dr.Oet. Vanillincukor',10,  '2021-03-10',44, 1, 6),
+('Vadasmártás', 500,'2020-12-19',499,  3, 3),
+('Mizo natúr joghurt', 150,'2020-12-30',100, 1, 1),
+('Classic áfonya', 50,'2021-02-27',1499,  2, 3);
+
+
+INSERT INTO Rendeles(RendID,datum, EID, FID, VID) VALUES 
+(1010,'2020-10-27', '1', '2', '9'),
+(1011,'2020-10-02', '2', '4', '6'),
+(1012,'2020-10-06', '3', '1', '10'),
+(1013,'2020-10-15', '1', '3', '8'),
+(1014,'2020-11-07', '3', '2', '7'),
+(1015,'2020-11-12', '3', '2', '7'),
+(1016,'2020-11-15', '3', '2', '7'),
+(1020,'2020-11-27', '1', '2', '9'),
+(1018,'2020-11-26', '4', '2', '9'),
+(1019,'2020-11-26', '2', '3', '10'),
+(1021,'2020-11-27', '3', '2', '7'),
+(1022,'2020-11-28', '1', '3', '6'),
+(1017,'2020-11-26', '2', '4', '8');
+
+INSERT INTO Tetelek(RendID, TID, darab) VALUES 
+(1010,127861042,1),
+(1010,127861047,3),
+(1010,127861051,4),
+(1010,127861029,5),
+(1010,127861027,1),
+(1010,127861046,3),
+(1011,127861046,8),
+(1011,127861031,6),
+(1011,127861046,4),
+(1011,127861050,2),
+(1011,127861031,10),
+(1011,127861047,5),
+(1012,127861049,9),
+(1012,127861049,6),
+(1012,127861039,12),
+(1012,127861043,13),
+(1013,127861053,1),
+(1013,127861048,2),
+(1013,127861031,4),
+(1013,127861043,5),
+(1013,127861052,6),
+(1013,127861056,7),
+(1013,127861029,8),
+(1014,127861050,1),
+(1014,127861030,6),
+(1014,127861043,4),
+(1014,127861056,5),
+(1014,127861028,4),
+(1015,127861052,6),
+(1016,127861041,7),
+(1016,127861048,5),
+(1017,127861042,3),
+(1018,127861045,7),
+(1018,127861039,2),
+(1018,127861050,4),
+(1018,127861053,1),
+(1019,127861056,6),
+(1019,127861031,4),
+(1019,127861027,5),
+(1019,127861031,5),
+(1019,127861046,1),
+(1019,127861051,4),
+(1019,127861044,1),
+(1019,127861045,6),
+(1019,127861053,7),
+(1020,127861047,8),
+(1020,127861030,9),
+(1020,127861042,7),
+(1020,127861030,6),
+(1020,127861040,7),
+(1020,127861029,5),
+(1021,127861040,6),
+(1021,127861029,2),
+(1021,127861044,10),
+(1021,127861053,12),
+(1021,127861029,15),
+(1021,127861031,4),
+(1021,127861041,6),
+(1021,127861056,7),
+(1022,127861030,8),
+(1022,127861038,5),
+(1022,127861029,4),
+(1022,127861046,5);
+
+ALTER TABLE tetelek ADD Reszosszeg INT;
+UPDATE tetelek 
+INNER JOIN termek ON tetelek.TID = Termek.TID
+SET tetelek.Reszosszeg=tetelek.darab*Termek.ar;
+
+ALTER TABLE rendeles ADD vegosszeg INT;
+UPDATE rendeles
+SET vegosszeg=(SELECT SUM(tetelek.Reszosszeg)FROM tetelek WHERE rendeles.RendID=tetelek.RendID);
+
+INSERT INTO kiszallitas(RendID, FID, datum) VALUES 
+(1010,2,'2020-10-03'),
+(1011,1,'2020-10-04'),
+(1012,3,'2020-10-08'),
+(1013,1,'2020-10-16'),
+(1014,2,'2020-11-09'),
+(1015,4,'2020-11-17'),
+(1016,2,'2020-11-17'),
+(1017,1,'2020-11-28'),
+(1018,4,'2020-11-27'),
+(1019,3,'2020-11-29'),
+(1020,2,'2020-11-29'),
+(1021,1,'2020-11-28'),
+(1022,3,'2020-11-30');

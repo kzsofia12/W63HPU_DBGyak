@@ -1,0 +1,76 @@
+CREATE table Kategoria(
+    KatID int PRIMARY KEY auto_increment,
+    nev varchar(20)
+);
+
+CREATE TABLE Raktar(
+    RakID int PRIMARY KEY auto_increment,
+    nev varchar(20),
+    irsz int(4),
+    varos varchar(20),
+    utcaHsz varchar(50)
+);
+
+CREATE TABLE Elado(
+    EID int PRIMARY KEY auto_increment,
+    nev varchar(20),
+    email varchar(50),
+    telefonszam int(9)
+);
+CREATE TABLE Vevo(
+    VID int PRIMARY KEY auto_increment,
+    nev varchar(20),
+    email varchar(50),
+    telefonszam int(9), 
+    jelszo varchar(30),
+    irsz int(4),
+    varos varchar(20),
+    utcaHsz varchar(50)
+);
+CREATE TABLE Futar(
+    FID int PRIMARY KEY auto_increment,
+    nev varchar(20),
+    telefonszam int(9)
+);
+
+CREATE TABLE Termek(
+    TID int primary key auto_increment,
+    nev varchar(20),
+    kiszereles int,
+    lejaratiDatum date,
+    ar int,
+    rakID int,
+    key rakID (rakID),
+    FOREIGN KEY (rakID) references Raktar(rakID),
+    KatID int,
+    foreign key (KatID) references Kategoria(KatID)
+);
+
+CREATE TABLE Rendeles(
+    RendID int primary key,
+    datum date,
+    EID int,
+    FOREIGN KEY (EID) references Elado(EID),
+    FID int,
+    FOREIGN KEY (FID) references Futar(FID),
+    VID int,
+    FOREIGN KEY (VID) references Vevo(VID)
+);
+
+CREATE TABLE Tetelek(
+    TetID int primary key auto_increment,
+    RendID int,
+    FOREIGN KEY (RendID) references Rendeles(RendID),
+    TID int,
+    FOREIGN KEY (TID) references Termek(TID),
+    darab int
+);
+
+CREATE TABLE kiszallitas(
+    kiszID int primary key auto_increment,
+    RendID int,
+    FOREIGN KEY (RendID) references Rendeles(RendID),
+    FID int,
+    FOREIGN KEY (FID) references Futar(FID),
+    datum DATE
+);

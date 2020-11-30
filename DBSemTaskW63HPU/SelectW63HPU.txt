@@ -1,0 +1,63 @@
+SELECT termek.nev as TermekNev,lejaratiDatum,Raktar.nev as RaktarNev
+FROM Termek
+INNER JOIN Raktar ON Termek.RakID = Raktar.RakID
+ORDER BY ar DESC LIMIT 3;
+
+SELECT datum,COUNT(RendID)as Darab
+FROM Rendeles
+GROUP BY datum;
+
+SELECT nev,count(rendeles.RendID) as darab
+FROM Rendeles
+JOIN Elado ON rendeles.EID=elado.EID
+group by rendeles.EID
+order by darab desc limit 1;
+
+SELECT Futar.nev, max(vegosszeg) as LegnagyobbRendeles
+FROM Kiszallitas
+JOIN rendeles ON kiszallitas.RendID=Rendeles.RendID
+JOIN futar ON kiszallitas.FID = Futar.FID
+WHERE month(kiszallitas.datum) = 11;
+
+SELECT Futar.nev, max(vegosszeg) as LegnagyobbRendeles, kiszallitas.datum
+FROM Kiszallitas
+JOIN rendeles ON kiszallitas.RendID=Rendeles.RendID
+JOIN futar ON kiszallitas.FID = Futar.FID
+WHERE month(kiszallitas.datum) = 11;
+
+SELECT vevo.nev, vevo.telefonszam,max(reszosszeg),termek.nev as Termeknev, tetelek.darab
+FROM Tetelek
+JOIN rendeles ON tetelek.RendID=Rendeles.RendID
+JOIN vevo ON rendeles.VID = Vevo.VID
+JOIN termek on Tetelek.TID = Termek.TID;
+
+SELECT kategoria.nev, avg(termek.ar) as atlagar
+from Termek
+Join Kategoria ON termek.KatID = Kategoria.KatID
+GROUP BY termek.KatID
+Order by atlagar;
+
+SELECT vevo.nev, count(RendID) as db, sum(vegosszeg) as Osszertek
+from Rendeles
+Join Vevo ON Rendeles.VID = Vevo.VID
+GROUP BY Rendeles.VID
+HAVING db >= 3;
+
+SELECT termek.nev,tetelek.darab, lejaratiDatum
+from termek
+inner join tetelek on termek.TID = tetelek.TID
+group by termek.nev
+having tetelek.darab > 5;
+
+SELECT vevo.nev,termek.nev, tetelek.darab, rendeles.datum
+from termek
+inner join tetelek on termek.TID = tetelek.TID
+inner join rendeles on tetelek.RendID = rendeles.RendID
+inner join vevo on rendeles.VID = vevo.VID
+WHERE vevo.nev = 'Rácz Mónika';
+
+SELECT kategoria.nev, count(tetelek.TetID) as VasaroltMennyiseg
+FROM Kategoria
+JOIN termek ON Kategoria.KatID = Termek.KatID
+JOIN Tetelek ON Termek.TID = Tetelek.TID
+group by termek.KatID;
