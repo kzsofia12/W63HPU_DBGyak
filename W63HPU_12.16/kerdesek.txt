@@ -1,0 +1,66 @@
+Tisztelt HallgatóK!
+
+Küldöm a vizsga feladatlapot.
+
+Név:
+
+                                                                                               Neptunkód:
+
+                                                                                               Szak:
+
+                                                                                               Dátum: 2020.12.16.
+
+ 
+
+VIZSGA DOLGOZAT
+
+Operációs rendszerek BSc  - CV
+
+ 
+
+1. Egy rendszer az alábbi össz-erőforrásokkal gazdálkodik: E1: 240; E2: 36; E3: 8   6p
+
+Négy processz van a rendszerbe: P1, P2, P3, P4.
+
+Kérdés a következő: biztonságos-e holtpontmentesség szempontjából a következő állapot? Ha igen, akkor határozza meg a rendszerben lévő folyamatok lehetséges sorrendjét az adott erőforrások értékeivel.
+
+                                        Foglal                                         Maximális igény
+
+                            E1       E2            E3                        E1          E2          E3
+
+P1                        53        14            4                          67          15          5
+
+P2                        0          5              1                          13          5            3
+
+P3                        46        17            0                          107        27          5
+
+P4                        127      0              1                          132        25          4
+
+ 
+
+
+a) Határozza meg a folyamatok által igényelt erőforrások mátrixát?
+
+
+b) Határozza meg pillanatnyilag szabad erőforrások számát?
+
+c) Igazolja a processzek végrehajtásának lehetséges sorrendjét - számolással?
+
+
+2. Jellemezze a processz (vezérlése) életciklusát: születés, futás és exitál - ezek működését, rendszerhívásait, a processz befejezésének lehetőségeit! 
+Rajzolja le a processz 3 állapotú állapotdiagramját!                                                                            6p
+
+3. Mi a Holtpont fogalma processzek esetén, keletkezése, kialakulásának szükséges feltételei, kezelése, megoldási lehetőségeit, bankár algoritmus leírása!                         6p
+
+4. Ismertesse az IPC mechanizmus tulajdonságait, majd jellemezzen legalább három mechanizmust!                
+                                                                                                 4p
+
+5. Melyek a fájlrendszer megvalósítási feladatok. Sorolja fel és ismertesse a szabad blokk menedzselési és a jegyzék struktúra kialakításának lehetőségeit - jellemezze!
+Általános UNIX fájlrendszer jellemzése (eszközök szimbólikus nevei, szuperblokk tartalma, hard és soft link)!                               
+                                                                                      8p
+
+Összesen: 30 pont
+
+Bednarik László
+
+ 
